@@ -475,21 +475,16 @@ Pada model **Content-Based Filtering**, metrik yang digunakan untuk mengevaluasi
 
 1. **Precision**: Metrik ini mengukur seberapa banyak item yang relevan yang dihasilkan oleh model dibandingkan dengan semua item yang direkomendasikan. Precision dihitung dengan rumus:
 
-   \[
-   \text{Precision} = \frac{\text{Jumlah item relevan yang dihasilkan}}{\text{Total item yang dihasilkan}}
-   \]
+   $$Precision = \frac{Jumlah\ item\ revelan\ yang\ dihasilkan}{Total\ item\ yang\ dihasilkan}$$
+
 
 2. **Recall**: Metrik ini mengukur seberapa banyak item relevan yang dihasilkan oleh model dibandingkan dengan semua item yang seharusnya direkomendasikan. Recall dihitung dengan rumus:
 
-   \[
-   \text{Recall} = \frac{\text{Jumlah item relevan yang dihasilkan}}{\text{Total item relevan yang seharusnya direkomendasikan}}
-   \]
+   $$Recall = \frac{Jumlah\ item\ relevan\ yang\ dihasilkan}{Total\ item\ yang\ seharusnya\ direkomendasikan}$$
 
 3. **F1-Score**: F1-Score adalah gabungan dari precision dan recall, memberikan nilai tunggal yang mengukur keseimbangan antara keduanya. F1-Score dihitung dengan rumus:
 
-   \[
-   \text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-   \]
+   $$F1\ Score = 2 * \frac{Precision * Recall}{Precision + Recall}$$
 
 Sebelum menghitung nilai precision, recall, dan F1-Score, perlu dibuat **ground truth** yang berisi label sebenarnya untuk hasil prediksi model. Ground truth ini dibuat berdasarkan derajat kesamaan yang dihitung menggunakan **Cosine Similarity**, dengan threshold yang ditetapkan sebesar **0.5**. Jika nilai similarity antara dua item lebih besar atau sama dengan threshold, maka dianggap sebagai "similar" (1), dan jika lebih kecil, dianggap "not similar" (0).
 
@@ -513,15 +508,13 @@ Pada model **Collaborative Filtering**, metrik yang digunakan untuk evaluasi ada
 
 RMSE dihitung dengan rumus berikut:
 
-\[
-\text{RMSE} = \sqrt{\frac{1}{N} \sum\_{i=1}^{N} (y_i - \hat{y}\_i)^2}
-\]
+$$RMSE = \sqrt{\frac{1}{N} \Sigma_{i=1}^N({y_i}- y\_pred_i)^2}$$
 
 Keterangan:
 
-- \(N\) adalah jumlah prediksi yang dilakukan.
-- \(y_i\) adalah nilai sebenarnya dari preferensi pengguna terhadap item.
-- \(\hat{y}\_i\) adalah prediksi model terhadap preferensi pengguna terhadap item.
+- N adalah jumlah prediksi yang dilakukan.
+- yi adalah nilai sebenarnya dari preferensi pengguna terhadap item.
+- y_pred adalah prediksi model terhadap preferensi pengguna terhadap item.
 
 RMSE memberikan gambaran seberapa jauh prediksi model dari nilai yang sebenarnya. Semakin kecil nilai RMSE, semakin baik kinerja model dalam memprediksi preferensi pengguna.
 
